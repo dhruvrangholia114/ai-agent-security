@@ -1,0 +1,10 @@
+=== gVisor Version ===
+runsc version release-20261109.0
+spec: 1.2.1
+
+=== Host Identity ===
+uid=1000(dhruv) gid=1000(dhruv) groups=1000(dhruv),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),1001(docker)
+
+=== Rootless gVisor Sandbox ===
+*** Warning: sandbox network isn't supported with --rootless, switching to host ***
+uid=0(root) gid=0(root) groups=0(root)
