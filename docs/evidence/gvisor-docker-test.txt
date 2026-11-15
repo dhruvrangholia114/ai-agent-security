@@ -1,0 +1,37 @@
+AI Agent Security - gVisor Docker Test Evidence
+Date: November 15, 2026
+
+Environment:
+- Ubuntu on WSL2
+- Docker Engine 29.9.3
+- Rootless Docker
+- gVisor release-20261109.0
+- Python 3.13.8 image
+
+Runtime test:
+Command: docker run --rm --runtime=runsc agent-security-test
+Result: PASS
+Output: Python 3.13.8
+
+Hardened gVisor test:
+- Runtime: runsc
+- Network: none
+- Capabilities: ALL dropped
+- Security option: no-new-privileges
+- Root filesystem: read-only
+- PID limit: 64
+- Memory limit: 512 MB
+- CPU limit: 1
+- /tmp: writable tmpfs with noexec,nosuid
+
+Results:
+- Non-root worker UID 10001: PASS
+- Network disabled: configured
+- Read-only workspace: PASS
+- Writable /tmp: PASS
+- Container execution: PASS
+
+Rootless Docker + gVisor compatibility:
+- gVisor runtime registered in Docker.
+- --ignore-cgroups configured because of cgroup compatibility.
+- Hardened container executed successfully.
