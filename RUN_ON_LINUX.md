@@ -26,8 +26,9 @@ It should print `rootless`. If it prints anything else, stop and fix the Docker 
 Clone the repository and enter it:
 
 ```bash
-git clone https://github.com/ethanlongney/ai-agent-security.git
 cd ai-agent-security
+git checkout main
+git pull
 ```
 
 Save the Linux environment details as evidence:
@@ -74,6 +75,12 @@ MODEL_NAME=openai/gpt-4o-mini
 CREWAI_DISABLE_TELEMETRY=true
 CREWAI_TRACING_ENABLED=false
 OTEL_SDK_DISABLED=true
+```
+
+Restrict the `.env` file to the current user:
+
+```bash
+chmod 600 .env
 ```
 
 Do not put a real key in the instructions, this file, or git. `.env` must not be committed.
