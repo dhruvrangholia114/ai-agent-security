@@ -6,9 +6,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /workspace
 
 # Install only the dependencies needed for the worker
-COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project code
 COPY agents/ ./agents/
@@ -16,9 +14,11 @@ COPY experiments/fixtures/ ./fixtures/
 
 # Create a non-root user
 RUN useradd --create-home --uid 10001 worker \
-    && mkdir -p /workspace/output \
-    && chown -R worker:worker /workspace
+    && mkdir -p /workspace/fixtures/output \
+    && chown -R worker:worker /workspace \
+    && chown -R root:root /workspace/fixtures/protected \
+    && chmod 700 /workspace/fixtures/protected
 
 USER worker
 
-CMD ["python", "--version"]
+CMD ["python", "agents/worker.py"]

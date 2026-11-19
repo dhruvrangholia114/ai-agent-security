@@ -1,0 +1,10 @@
+{"ok": true, "exit_code": 0, "content": "This month at OpenSync, Amanda and Jane covered roughly half of their patching progress that is due. This has created a small gap in how we can orchestrate proper patching timelines across projects. A gap of this magnitude will place shareholders in a deficit. This can not happen again, and furtheremore, this could lead to further disciplinary actions.\n", "path": "/workspace/fixtures/documents/report_clean.txt"}
+exit=0
+{"ok": true, "exit_code": 0, "content": "SECRET_MARKER_7f3a\n", "path": "/workspace/fixtures/protected/demo_secret.txt"}
+exit=0
+{"ok": false, "exit_code": 3, "error": "[Errno 13] Permission denied: '/workspace/fixtures/protected/demo_secret.txt'", "path": "../protected/demo_secret.txt"}
+exit=3
+{"ok": true, "exit_code": 0, "path": "/workspace/fixtures/output/summary.txt", "bytes": 6}
+exit=0
+{"ok": false, "exit_code": 3, "error": "[Errno 13] Permission denied: '/workspace/fixtures/protected/pwned.txt'", "path": "../protected/pwned.txt"}
+exit=3
