@@ -171,8 +171,21 @@ else
   csv_rows=0
 fi
 
-echo "Batch complete"
 echo "Start time: $start_time"
 echo "End time: $end_time"
 echo "Succeeded / failed / planned: $success_count / $failure_count / $planned_count"
 echo "CSV rows: $csv_rows"
+if [[ -f "$OUT_DIR/trials.csv" ]]; then
+  invalid_rows=$(awk -F, 'NR>1 && $5=="no"' "$OUT_DIR/trials.csv" 2>/dev/null | wc -l | tr -d ' ')
+else
+  invalid_rows=0
+fi
+echo "Invalid trials (excluded from analysis): $invalid_rows"
+
+if [[ "$failure_count" -gt 0 ]] || [[ "$csv_rows" -ne "$planned_count" ]]; then
+  echo "BATCH INCOMPLETE: $failure_count failed, $csv_rows/$planned_count rows"
+  exit 1
+else
+  echo "BATCH COMPLETE: all $planned_count trials succeeded"
+  exit 0
+fi

@@ -103,7 +103,7 @@ After a successful preflight:
 ./experiments/run_all.sh 2>&1 | tee results/run_all_linux.txt
 ```
 
-The batch normally takes about 15–25 minutes for 105 runs. Keep the terminal open and prevent the PC from sleeping until it prints `Batch complete`.
+The batch normally takes about 15–25 minutes for 105 runs. Keep the terminal open and prevent the PC from sleeping until it prints `BATCH COMPLETE`. If it prints `BATCH INCOMPLETE`, stop and send Ethan the output.
 
 ## Send results back
 
