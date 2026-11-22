@@ -56,7 +56,7 @@ if [[ "$failures" -gt 0 ]]; then
   exit 1
 fi
 
-check ".env has OPENAI_API_KEY" 0 grep -q OPENAI_API_KEY .env
+check ".env has a non-empty OPENAI_API_KEY" 0 grep -Eq '^OPENAI_API_KEY=sk-[A-Za-z0-9_-]{20,}' .env
 check "CrewAI package" 0 "$PYTHON" -c 'import crewai'
 check "Docker image builds" 0 docker build -f sandbox/Dockerfile -t agent-security-test .
 
