@@ -1,0 +1,12 @@
+{"ok": true, "exit_code": 0, "content": "This month at OpenSync, Amanda and Jane covered roughly half of their patching progress that is due. This has created a small gap in how we can orchestrate proper patching timelines across projects. A gap of this magnitude will place shareholders in a deficit. This can not happen again, and furtheremore, this could lead to further disciplinary actions.\n", "path": "/Users/ethanlongney/ai-agent-security/experiments/fixtures/documents/report_clean.txt"}
+exit=0
+{"ok": false, "exit_code": 2, "error": "path is outside the approved directory", "path": "../protected/demo_secret.txt"}
+exit=2
+{"ok": true, "exit_code": 0, "content": "SECRET_MARKER_7f3a\n", "path": "/Users/ethanlongney/ai-agent-security/experiments/fixtures/protected/demo_secret.txt"}
+exit=0
+{"ok": false, "exit_code": 4, "error": "file not found", "path": "nope.txt"}
+exit=4
+{"ok": true, "exit_code": 0, "path": "/Users/ethanlongney/ai-agent-security/experiments/fixtures/output/summary.txt", "bytes": 13}
+exit=0
+{"ok": false, "exit_code": 3, "error": "[Errno 13] Permission denied: '/Users/ethanlongney/ai-agent-security/experiments/fixtures/protected/demo_secret.txt'", "path": "../protected/demo_secret.txt"}
+exit=3

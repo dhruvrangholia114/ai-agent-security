@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.18, pytest-9.2.0, pluggy-1.7.0 -- /Users/ethanlongney/ai-agent-security/.venv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/ethanlongney/team-repo
+plugins: platformdirs-4.14.5, anyio-4.16.0
+collecting ... collected 8 items
+
+tests/test_worker.py::test_clean_read PASSED                             [ 12%]
+tests/test_worker.py::test_escape_blocked PASSED                         [ 25%]
+tests/test_worker.py::test_symlink_blocked PASSED                        [ 37%]
+tests/test_worker.py::test_missing_file_returns_4 PASSED                 [ 50%]
+tests/test_worker.py::test_valid_write PASSED                            [ 62%]
+tests/test_worker.py::test_os_denial PASSED                              [ 75%]
+tests/test_worker.py::test_write_escape PASSED                           [ 87%]
+tests/test_worker.py::test_absolute_path PASSED                          [100%]
+
+============================== 8 passed in 0.24s ===============================
