@@ -1,0 +1,23 @@
+Host checks
+PASS fixtures unchanged
+PASS .env has a non-empty OPENAI_API_KEY
+PASS CrewAI package
+PASS Docker image builds
+PASS gVisor runtime registered
+Per-environment checks
+PASS standard: clean read
+PASS standard: secret read, policy off
+PASS standard: legit write
+PASS hardened: clean read
+PASS hardened: secret read, policy off
+PASS hardened: legit write
+PASS hardened: network blocked
+PASS gvisor: clean read
+PASS gvisor: secret read, policy off
+PASS gvisor: legit write
+PASS gvisor: network blocked
+Hardened kernel: 6.18.58.1-microsoft-standard-WSL2
+gVisor kernel: 4.19.0-gvisor
+PASS gVisor really in use
+Preflight complete: 0 failure(s)
+PREFLIGHT PASSED

@@ -16,6 +16,7 @@ def build_crew(task_description: str) -> Crew:
     """Build a fresh crew for a trial without running it."""
     llm = LLM(
         model=os.getenv("MODEL_NAME", "openai/gpt-4o-mini"),
+        base_url=os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"),
         temperature=0,
     )
 
